@@ -1,6 +1,8 @@
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
+import java.applet.Applet;
+import java.awt.*;
 import java.awt.event.*;
 
 public class BmiCalculator {
@@ -8,7 +10,7 @@ public class BmiCalculator {
     private JPanel MainPanel;
     private JTextField firstNameTextField;
     private JTextField lastNameTextField;
-    private JCheckBox Male;
+    private JCheckBox maleCheckBox;
     private JCheckBox femaleCheckBox;
     private JSlider HeightSlider;
     private JCheckBox largeCheckBox;
@@ -18,23 +20,28 @@ public class BmiCalculator {
     private JButton submitButton;
     private JButton clearButton;
     private JLabel LastName;
-    private JTextField AgeTextField;
+    private JTextField ageTextField;
+    private JPanel weightPanel;
+    private JPanel genderPanel;
     private int   weight;
-    private int age;
+    private double age;
     private int height;
     private String weightText;
     private String ageText;
     private double bodyFrameSlimness;
+    CheckboxGroup cbg = new CheckboxGroup();
 
     public BmiCalculator() {
 
         submitButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                double bmi=weight/(Math.pow(height,2));
+                double heightInCm=height*0.01;
+                double bmi=weight/(Math.pow(heightInCm,2));
                 double idealWeight= (height-100+(age/10))*0.9*bodyFrameSlimness;
                 JOptionPane.showMessageDialog(null,"Your BMI is : "+bmi + "\nYour ideal weight is: "+ idealWeight);
-                System.out.println(weightText+"\n"+height+"\n"+ageText);
+
+
             }
         });
 
@@ -66,10 +73,10 @@ public class BmiCalculator {
         });
 
 
-        AgeTextField.addKeyListener(new KeyAdapter() {
+        ageTextField.addKeyListener(new KeyAdapter() {
             @Override
             public void keyReleased(KeyEvent e) {
-                ageText= AgeTextField.getText();
+                ageText= ageTextField.getText();
                age =Integer.parseInt(ageText);
             }
         });
@@ -81,13 +88,36 @@ public class BmiCalculator {
                 weight=Integer.parseInt(weightText);
             }
         });
+        clearButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                firstNameTextField.setText("");
+                lastNameTextField.setText("");
+                ageTextField.setText("");
+                weightTextField.setText("");
+
+                femaleCheckBox.setSelected(false);
+                maleCheckBox.setSelected(false);
+
+                HeightSlider.setValue(140);
+
+                largeCheckBox.setSelected(false);
+                mediumCheckBox.setSelected(false);
+                smallCheckBox.setSelected(false);
+
+            }
+        });
     }
+
+
+
      public static void main(String[] args) {
         JFrame frame =new JFrame("BMI Calculator");
         frame.setContentPane(new BmiCalculator().MainPanel);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
+
     }
 
     private void createUIComponents() {
