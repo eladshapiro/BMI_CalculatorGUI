@@ -30,8 +30,8 @@ public class BmiCalculator {
     ButtonGroup genderGroup;
     ButtonGroup bodyFrameGroup;
 
-    public BmiCalculator() {
-
+    public BmiCalculator()
+    {
         submitButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -48,7 +48,7 @@ public class BmiCalculator {
                 double heightInCm=height*0.01;
                 double bmi=weight/(Math.pow(heightInCm,2));
                 double idealWeight= (height-100+(age/10))*0.9*bodyFrameSlimness;
-                JOptionPane.showMessageDialog(null,"Your BMI is : "+bmi + "\nYour ideal weight is: "+ idealWeight);
+                JOptionPane.showMessageDialog(null,"Your BMI is : "+bmi+"\nAnd you body status is: "+weightStatus(bmi)+ "\n\nYour ideal weight is: "+ idealWeight+"\nAnd your Actual Weight is: "+weight);
 
             }
         });
@@ -116,6 +116,34 @@ public class BmiCalculator {
     }
 
 
+    public String weightStatus(double bmi)
+    {
+        if (bmi<15)
+        {
+            return "Anorexic ";
+        }
+        if (bmi>=15 && bmi<=18.5)
+        {
+            return "Underweight ";
+        }
+        if (bmi>=18.5 && bmi<=24.9)
+        {
+            return "Normal ";
+        }
+        if (bmi>=25 && bmi<=29.9)
+        {
+            return "Overweight  ";
+        }
+        if (bmi>=30 && bmi<=35)
+        {
+            return "Obese  ";
+        }
+        if (bmi>=35)
+        {
+            return "Extreme Obese  ";
+        }
+        return "";
+    }
 
      public static void main(String[] args) {
         JFrame frame =new JFrame("BMI Calculator");
