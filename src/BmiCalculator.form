@@ -21,15 +21,18 @@
         <constraints>
           <grid row="4" column="0" row-span="1" col-span="2" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
         </constraints>
-        <properties/>
-        <border type="bevel-lowered"/>
+        <properties>
+          <background color="-9777594"/>
+        </properties>
+        <border type="none"/>
         <children>
           <component id="98aa6" class="javax.swing.JLabel">
             <constraints>
               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <text value="Actual Weight"/>
+              <foreground color="-16777216"/>
+              <text value="Actual Weight:"/>
             </properties>
           </component>
           <component id="76a50" class="javax.swing.JTextField" binding="weightTextField">
@@ -50,31 +53,37 @@
         <properties>
           <background color="-9777594"/>
         </properties>
-        <border type="bevel-lowered"/>
+        <border type="none"/>
         <children>
-          <component id="3d4db" class="javax.swing.JCheckBox" binding="largeCheckBox" default-binding="true">
+          <component id="3d4db" class="javax.swing.JRadioButton" binding="largeRadioButton">
             <constraints>
               <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
+              <background color="-10170810"/>
+              <foreground color="-16777216"/>
               <selected value="false"/>
               <text value="Large"/>
             </properties>
           </component>
-          <component id="1bd58" class="javax.swing.JCheckBox" binding="mediumCheckBox">
+          <component id="1bd58" class="javax.swing.JRadioButton" binding="mediumRadioButton">
             <constraints>
               <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
+              <background color="-10170810"/>
+              <foreground color="-16777216"/>
               <label value="Medium"/>
               <text value="Medium"/>
             </properties>
           </component>
-          <component id="faf46" class="javax.swing.JCheckBox" binding="smallCheckBox" default-binding="true">
+          <component id="faf46" class="javax.swing.JRadioButton" binding="smallRadioButton" default-binding="true">
             <constraints>
               <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
+              <background color="-10170810"/>
+              <foreground color="-16777216"/>
               <text value="Small"/>
             </properties>
           </component>
@@ -84,7 +93,7 @@
             </constraints>
             <properties>
               <foreground color="-16777216"/>
-              <text value="Body-Frame"/>
+              <text value="Body-Frame:"/>
             </properties>
           </component>
         </children>
@@ -94,8 +103,10 @@
         <constraints>
           <grid row="4" column="2" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
         </constraints>
-        <properties/>
-        <border type="bevel-lowered"/>
+        <properties>
+          <background color="-9777594"/>
+        </properties>
+        <border type="etched"/>
         <children>
           <component id="b26a8" class="javax.swing.JButton" binding="submitButton" default-binding="true">
             <constraints>
@@ -124,7 +135,7 @@
         <properties>
           <background color="-9777594"/>
         </properties>
-        <border type="bevel-lowered"/>
+        <border type="none"/>
         <children>
           <component id="43d46" class="javax.swing.JLabel">
             <constraints>
@@ -132,7 +143,7 @@
             </constraints>
             <properties>
               <foreground color="-16777216"/>
-              <text value="Age"/>
+              <text value="Age:"/>
             </properties>
           </component>
           <component id="d8645" class="javax.swing.JTextField" binding="ageTextField">
@@ -151,7 +162,7 @@
             </constraints>
             <properties>
               <foreground color="-16711423"/>
-              <text value="Last Name"/>
+              <text value="Last Name:"/>
             </properties>
           </component>
           <component id="1b01e" class="javax.swing.JTextField" binding="firstNameTextField">
@@ -171,7 +182,7 @@
             <properties>
               <background color="-16777216"/>
               <foreground color="-16711423"/>
-              <text value="First Name"/>
+              <text value="First Name:"/>
             </properties>
           </component>
           <component id="729" class="javax.swing.JTextField" binding="lastNameTextField">
@@ -194,14 +205,14 @@
         <properties>
           <background color="-9777594"/>
         </properties>
-        <border type="bevel-lowered"/>
+        <border type="none"/>
         <children>
-          <component id="bc04f" class="javax.swing.JCheckBox" binding="maleCheckBox">
+          <component id="bc04f" class="javax.swing.JRadioButton" binding="maleRadioButton">
             <constraints>
               <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <background color="-983553"/>
+              <background color="-10170810"/>
               <foreground color="-16711423"/>
               <hideActionText value="false"/>
               <label value="Male"/>
@@ -211,12 +222,12 @@
               <visible value="true"/>
             </properties>
           </component>
-          <component id="63e55" class="javax.swing.JCheckBox" binding="femaleCheckBox" default-binding="true">
+          <component id="63e55" class="javax.swing.JRadioButton" binding="femaleRadioButton" default-binding="true">
             <constraints>
               <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <background color="-852482"/>
+              <background color="-10170810"/>
               <foreground color="-16711423"/>
               <text value="Female"/>
             </properties>
@@ -227,7 +238,7 @@
             </constraints>
             <properties>
               <foreground color="-16777216"/>
-              <text value="Gender"/>
+              <text value="Gender:"/>
             </properties>
           </component>
         </children>
@@ -237,8 +248,10 @@
         <constraints>
           <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
         </constraints>
-        <properties/>
-        <border type="bevel-lowered"/>
+        <properties>
+          <background color="-9777594"/>
+        </properties>
+        <border type="none"/>
         <children>
           <component id="7ced0" class="javax.swing.JSlider" binding="HeightSlider">
             <constraints>
@@ -266,11 +279,21 @@
             </constraints>
             <properties>
               <foreground color="-16711423"/>
-              <text value="Height"/>
+              <text value="Height:"/>
             </properties>
           </component>
         </children>
       </grid>
+      <vspacer id="29bc">
+        <constraints>
+          <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+        </constraints>
+      </vspacer>
+      <vspacer id="40314">
+        <constraints>
+          <grid row="5" column="2" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+        </constraints>
+      </vspacer>
     </children>
   </grid>
   <buttonGroups>
