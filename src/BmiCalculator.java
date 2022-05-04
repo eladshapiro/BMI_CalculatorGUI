@@ -64,16 +64,19 @@ public class BmiCalculator {
                 bodyFrameSlimness=0.9;
             }
         });
-        AgeTextField.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                ageText= AgeTextField.getText();
 
+
+        AgeTextField.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyReleased(KeyEvent e) {
+                ageText= AgeTextField.getText();
+               age =Integer.parseInt(ageText);
             }
         });
-        weightTextField.addActionListener(new ActionListener() {
+
+        weightTextField.addKeyListener(new KeyAdapter() {
             @Override
-            public void actionPerformed(ActionEvent e) {
+            public void keyReleased(KeyEvent e) {
                 weightText=weightTextField.getText();
                 weight=Integer.parseInt(weightText);
             }
