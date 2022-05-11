@@ -96,6 +96,7 @@ public class BmiCalculator {
                 weight=Integer.parseInt(weightText);
             }
         });
+
         clearButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -155,6 +156,6 @@ public class BmiCalculator {
     }
 
     private void createUIComponents() {
-        // TODO: place custom component creation code here
+
     }
 }
